@@ -1,0 +1,592 @@
+/* ===== Google Translate Dropdown (pinned κάτω δεξιά) ===== */
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+}
+
+#google_translate_element {
+    position: fixed !important;
+    bottom: 10px !important;
+    right: 10px !important;
+    z-index: 1000 !important;
+    background: #ffffff !important;
+    border-radius: 8px !important;
+    padding: 6px 8px !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.25) !important;
+}
+
+/* ===== Global Dark Theme ===== */
+html, body {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+section, div, header, footer, main, article {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+/* Headings and text */
+h1, h2, h3, h4, h5, h6, p, span, li, a {
+    color: #fff !important;
+}
+
+/* ===== Navbar / Menu Bar — Transparent, White Text, Gold Hover ===== */
+.navbar-default, .navbar, nav {
+    background-color: transparent !important;  /* fully transparent navbar */
+    border: none !important;
+    box-shadow: none !important;
+    height: auto !important; /* don't let navbar grow with logo */
+    padding: 10px 0;         /* optional vertical padding */
+}
+
+.navbar-default .navbar-nav > li > a,
+.navbar a {
+    color: #fff !important;             /* white text */
+    background-color: transparent !important; /* transparent background */
+    transition: color 0.3s ease;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar a:hover,
+.navbar-default .navbar-nav > li.active > a {
+    color: #FFD700 !important; /* gold hover/active text */
+    background-color: transparent !important;
+    font-weight: bold;
+}
+
+.navbar-default .dropdown-menu {
+    background-color: transparent !important; /* transparent dropdown */
+    border: none !important;
+}
+
+.navbar-default .dropdown-menu > li > a {
+    color: #fff !important;
+}
+
+.navbar-default .dropdown-menu > li > a:hover {
+    color: #FFD700 !important;
+}
+
+
+/* ===== Logo Scaling ===== */
+#logoTextWrap .site-logo {
+    transform: scale(2); /* 2x bigger */
+    display: block;
+    margin: 0 auto;
+    height: auto !important;
+    width: auto !important;
+    transition: transform 0.25s ease;
+}
+
+#logoTextWrap .site-logo:hover {
+    transform: scale(2.1); /* slightly larger on hover */
+}
+
+/* ===== Navbar size / prevent it from growing ===== */
+.wb-header {
+    height: 50px !important; /* keep navbar compact */
+}
+
+.wb-header .logoWidget {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px !important; /* matches navbar */
+}
+
+
+/* ===== Global spacing between sections only ===== */
+section, .widget-section {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+
+/* ===== CTA Buttons - Gold ===== */
+.cta-button {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: #FFD700 !important;
+    color: #000 !important;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #E6C200 !important;
+    transform: scale(1.05);
+}
+
+
+/* ===== Mobile Menu (fullscreen & centered elements) ===== */
+.mobile-menu {
+    position: fixed;        
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;         
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;     
+    background-color: rgba(0,0,0,0.9); 
+    z-index: 9999;
+    transform: translateY(-100%); 
+    transition: transform 0.3s ease;
+}
+
+.mobile-menu.open {
+    transform: translateY(0); 
+}
+
+/* ===== Results Section ===== */
+#section-results {
+    margin: 60px 0 !important; 
+    padding: 10px 0 !important;
+}
+
+#section-results .result-image-wrapper {
+    overflow: hidden; 
+    border-radius: 8px;
+}
+
+#section-results .result-image-wrapper img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    cursor: pointer; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#section-results .result-image-wrapper img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+/* ===== Gallery Section ===== */
+#section-new-gallery {
+    margin: 10px 0 !important; 
+    padding: 10px 0 !important;
+}
+
+#section-new-gallery .result-image-wrapper {
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 0px;
+}
+
+#section-new-gallery .result-image-wrapper img {
+    width: 100%;
+    height: 250px; 
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#section-new-gallery .result-image-wrapper img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+/* ===== Section Headers: White Text, Transparent Background ===== */
+.richTextWidget.section-header,
+.text-center.richTextWidget.section-header {
+    background-color: transparent !important;
+    padding: 0 !important;
+    margin: 20px auto !important;
+}
+
+.richTextWidget.section-header h1,
+.richTextWidget.section-header h2,
+.richTextWidget.section-header h3 {
+    color: #fff !important;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.richTextWidget.section-header p {
+    color: #fff !important;
+    font-size: 16px;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.4;
+    text-align: center;
+}
+
+/* ===== Mobile-Friendly Header Fonts ===== */
+@media (max-width: 992px) {
+    .richTextWidget.section-header h1,
+    .richTextWidget.section-header h2,
+    .richTextWidget.section-header h3 {
+        font-size: 28px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .richTextWidget.section-header h1,
+    .richTextWidget.section-header h2,
+    .richTextWidget.section-header h3 {
+        font-size: 22px !important;
+    }
+    .richTextWidget.section-header p {
+        font-size: 14px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .richTextWidget.section-header h1,
+    .richTextWidget.section-header h2,
+    .richTextWidget.section-header h3 {
+        font-size: 18px !important;
+    }
+    .richTextWidget.section-header p {
+        font-size: 12px !important;
+    }
+}
+
+
+/* ===== Lightbox Overlay ===== */
+.lightbox-overlay,
+.custom-lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.lightbox-overlay img,
+.custom-lightbox .lightbox-image {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease;
+}
+
+.lightbox-overlay img:hover,
+.custom-lightbox .lightbox-image:hover {
+    transform: scale(1.05);
+}
+
+.custom-lightbox .lightbox-content {
+    position: relative;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.custom-lightbox .lightbox-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 32px;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 100000;
+    font-weight: bold;
+    transition: transform 0.2s ease;
+}
+
+.custom-lightbox .lightbox-close:hover {
+    transform: scale(1.2);
+}
+
+/* Navigation Arrows */
+.lightbox-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+    user-select: none;
+    padding: 10px;
+}
+.lightbox-arrow.left { left: 10px; }
+.lightbox-arrow.right { right: 10px; }
+
+/* Disable body scroll when lightbox open */
+body.lightbox-open {
+    overflow: hidden;
+}
+
+/* Mobile Lightbox */
+@media (max-width: 768px) {
+    .custom-lightbox .lightbox-image {
+        width: 100%;
+        height: 100%;
+        max-width: none;
+        max-height: none;
+        object-fit: contain;
+        display: block;
+        margin: auto;
+    }
+}
+
+/* ===== Site Logo Image – 2x Bigger (Facebook-style) ===== */
+#logoTextWrap .site-logo {
+    height: 72px !important; /* doubled from 36px */
+    width: auto !important;
+    display: block;
+    margin: 0 auto;
+    max-height: none !important;
+    transition: transform 0.25s ease;
+}
+
+#logoTextWrap .site-logo:hover {
+    transform: scale(1.05);
+}
+
+/* Header Container Adjustment */
+.wb-header .logoWidget {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90px !important; /* increased height to fit bigger logo */
+    overflow: visible !important;
+}
+
+/* Mobile-Friendly Responsive (also doubled) */
+@media (max-width: 992px) {
+    #logoTextWrap .site-logo { height: 60px !important; }
+    .wb-header .logoWidget { height: 75px !important; }
+}
+
+@media (max-width: 768px) {
+    #logoTextWrap .site-logo { height: 48px !important; }
+    .wb-header .logoWidget { height: 65px !important; }
+}
+
+@media (max-width: 480px) {
+    #logoTextWrap .site-logo { height: 44px !important; }
+    .wb-header .logoWidget { height: 60px !important; }
+}
+
+/* ===== Transparent Background for Section Headers ===== */
+.richTextWidget.section-header,
+.text-center.richTextWidget.section-header {
+    background-color: transparent !important;
+    padding: 0 !important;  /* remove extra padding if any */
+}
+
+/* Optional: adjust text color for better visibility */
+.richTextWidget.section-header h1,
+.richTextWidget.section-header h2,
+.richTextWidget.section-header h3 {
+    color: #FFD700 !important;  /* gold headers */
+}
+
+.richTextWidget.section-header p {
+    color: #fff !important;  /* keep descriptions white */
+}
+
+/* ===== Footer Full Black Background ===== */
+footer, 
+footer .container, 
+footer .row, 
+footer .col, 
+footer section, 
+footer .widget-section {
+    background-color: #000 !important;
+    color: #fff !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Footer links hover */
+footer a:hover {
+    color: #FFD700 !important; /* gold hover for links in footer */
+}
+
+/* Optional: footer text color */
+footer p, footer span, footer li {
+    color: #fff !important;
+}
+
+/* ===== Google Translate Default Colors ===== */
+#google_translate_element,
+#google_translate_element * {
+    all: unset !important; /* reset all inherited styles */
+    background: #fff !important; /* default white background */
+    color: #000 !important;       /* default black text */
+    font-family: Arial, sans-serif !important; /* default font */
+    border-radius: 8px !important;
+    padding: 6px 8px !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.25) !important;
+}
+
+
+
+/* ===== Section Headers: White Text, Transparent Background ===== */
+.richTextWidget.section-header,
+.text-center.richTextWidget.section-header {
+    background-color: transparent !important; /* fully transparent */
+    padding: 0 !important;                    /* remove extra padding */
+    margin: 20px auto !important;             /* global top/bottom spacing */
+}
+
+/* Header text */
+.richTextWidget.section-header h1,
+.richTextWidget.section-header h2,
+.richTextWidget.section-header h3 {
+    color: #fff !important;  /* white headers */
+    text-align: center;
+    line-height: 1.2;
+}
+
+/* Paragraph text inside headers */
+.richTextWidget.section-header p {
+    color: #fff !important;  /* white description */
+    font-size: 16px;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.4;
+    text-align: center;
+}
+
+/* ===== Mobile-Friendly Header Fonts ===== */
+@media (max-width: 992px) {
+    .richTextWidget.section-header h1,
+    .richTextWidget.section-header h2,
+    .richTextWidget.section-header h3 {
+        font-size: 28px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .richTextWidget.section-header h1,
+    .richTextWidget.section-header h2,
+    .richTextWidget.section-header h3 {
+        font-size: 22px !important;
+    }
+    .richTextWidget.section-header p {
+        font-size: 14px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .richTextWidget.section-header h1,
+    .richTextWidget.section-header h2,
+    .richTextWidget.section-header h3 {
+        font-size: 18px !important;
+    }
+    .richTextWidget.section-header p {
+        font-size: 12px !important;
+    }
+}
+
+/* ===== Top Hero & Breadcrumb Sections ===== */
+section.wb-heroHeader,
+section.breadcrumb-section {
+    position: relative;
+    background-color: transparent !important;
+}
+
+section.wb-heroHeader:before,
+section.breadcrumb-section:before {
+    background: transparent !important;
+    opacity: 0 !important;
+    content: "" !important;
+    display: none !important;
+}
+
+section.wb-heroHeader .richTextWidget.wb-heroHeader-content h1,
+section.wb-heroHeader .richTextWidget.wb-heroHeader-content h2,
+section.wb-heroHeader .richTextWidget.wb-heroHeader-content h3,
+section.breadcrumb-section .richTextWidget.title-heading h1,
+section.breadcrumb-section .richTextWidget.title-heading h2,
+section.breadcrumb-section .richTextWidget.title-heading h3 {
+    color: #fff !important;
+    background: transparent !important;
+    text-align: center;
+    line-height: 1.2;
+    margin: 0 auto;
+}
+
+/* Mobile Friendly Header Fonts */
+@media (max-width: 992px) {
+    section.wb-heroHeader .richTextWidget.wb-heroHeader-content h1,
+    section.wb-heroHeader .richTextWidget.wb-heroHeader-content h2,
+    section.wb-heroHeader .richTextWidget.wb-heroHeader-content h3,
+    section.breadcrumb-section .richTextWidget.title-heading h1,
+    section.breadcrumb-section .richTextWidget.title-heading h2,
+    section.breadcrumb-section .richTextWidget.title-heading h3 {
+        font-size: 28px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    section.wb-heroHeader .richTextWidget.wb-heroHeader-content h1,
+    section.wb-heroHeader .richTextWidget.wb-heroHeader-content h2,
+    section.wb-heroHeader .richTextWidget.wb-heroHeader-content h3,
+    section.breadcrumb-section .richTextWidget.title-heading h1,
+    section.breadcrumb-section .richTextWidget.title-heading h2,
+    section.breadcrumb-section .richTextWidget.title-heading h3 {
+        font-size: 22px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    section.wb-heroHeader .richTextWidget.wb-heroHeader-content h1,
+    section.wb-heroHeader .richTextWidget.wb-heroHeader-content h2,
+    section.wb-heroHeader .richTextWidget.wb-heroHeader-content h3,
+    section.breadcrumb-section .richTextWidget.title-heading h1,
+    section.breadcrumb-section .richTextWidget.title-heading h2,
+    section.breadcrumb-section .richTextWidget.title-heading h3 {
+        font-size: 18px !important;
+    }
+}
+/* ===== Global Section Spacing ===== */
+section, .widget-section {
+    margin: 20px 0 !important;
+}
+/* Exclude header, navbar, and logo */
+header .navbar,
+header .logo,
+.navbar,
+#logoTextWrap {
+    margin: 0 !important;
+}
+
+/* ===== Top Section Headers: Transparent Background, White Text ===== */
+section.wb-heroHeader.dark .richTextWidget.wb-heroHeader-content h1,
+section.wb-heroHeader.dark .richTextWidget.wb-heroHeader-content h2,
+section.wb-heroHeader.dark .richTextWidget.wb-heroHeader-content h3,
+section.breadcrumb-section.dark .richTextWidget.title-heading h1,
+section.breadcrumb-section.dark .richTextWidget.title-heading h2,
+section.breadcrumb-section.dark .richTextWidget.title-heading h3 {
+    background-color: transparent !important; /* remove any dark overlay */
+    color: #fff !important;                   /* white text */
+    line-height: 1.2;
+    margin: 0;
+    padding: 0;
+    text-align: center;                        /* center text, optional */
+}
+
+/* ===== Remove overlay behind top sections ===== */
+section.wb-heroHeader.dark:before,
+section.breadcrumb-section.dark:before {
+    background: transparent !important; /* remove black overlay */
+    opacity: 0 !important;
+    content: "" !important;
+    display: none !important;
+}
